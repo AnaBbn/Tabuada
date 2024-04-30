@@ -1,0 +1,28 @@
+{
+  "name": "tabuada",
+  "version": "1.0.0",
+  "description": "atividade ppi",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaBbn/Tabuada.git"
+  },
+  "keywords": [
+    "node",
+    "http"
+  ],
+  "author": "Ana Beatriz Barilli Nogueira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaBbn/Tabuada/issues"
+  },
+  "homepage": "https://github.com/AnaBbn/Tabuada#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
