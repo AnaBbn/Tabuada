@@ -32,25 +32,27 @@ app.get('/', (req, res) => {
     const tabuada = parseInt(req.query.tabuada) || 1;
     const sequencia = parseInt(req.query.sequencia) || 10;
 
-    const resultado = gerarTabuada(tabuada, sequencia);
-
-    const html = `
-    <html>
-        <head>
-            <title>Tabuada</title>
-            <style>${estiloCss}</style>
-        </head>
-        <body>
-            <h1>Tabuada do ${tabuada}</h1>
-            <div class="resultado">${resultado}</div>
-        </body>
-    </html>
-    `;
-
-    res.send(html);
+    res.write('<html>');
+    res.write('<head>');
+    res.write('<title>Tabuada</title>');
+    res.write('<style>' + estiloCss + '</style>');
+    res.write('</head>');
+    res.write('<body>');
+    res.write('<h1>Tabuada do ' + tabuada + '</h1>');
+    res.write('<div class="resultado">');
+    
+    for (let i = 0; i <= sequencia; i++) {
+        res.write(`${tabuada} x ${i} = ${tabuada * i}<br>`);
+    }
+    
+    res.write('</div>');
+    res.write('</body>');
+    res.write('</html>');
+    res.end();
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
